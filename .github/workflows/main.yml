@@ -103,8 +103,7 @@ jobs:
           git clone --depth 1 https://${{ secrets.TWLBOT_TOKEN }}@github.com/NPXTobi/update-builds.git
           mkdir -p update-builds/builds/D7-Menu/
           cd update-builds/builds/D7-Menu/
-          qrencode -o D7-Menu.png https://github.com/NPXTobi/update-builds/raw/v$CURRENT_DATE/builds/D7-Menu/D7-Menu.cia
-          qrencode -o D7-Menu-release.png https://github.com/NPXTobi/D7-Menu/releases/download/$COMMIT_TAG/D7-Menu.cia
+          
           cp ${{ github.workspace }}/build/* .
           git stage .
           git commit -m "D7-Menu | $COMMIT_HASH"
